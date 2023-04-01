@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "2f76a271-fcf1-4a0e-8a51-d964218897a2",
+		"name": "Obaki",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"waheed.2ndyearelegant@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    let data = pm.response.json().message;\r",
+									"    pm.collectionVariables.set('token', data.token);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"waheed.2ndyearelegant@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\" : \"+12087444184\",\r\n    \"otp\" : \"396823\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/verifyOtp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"verifyOtp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant Or House",
+			"item": [
+				{
+					"name": "Get RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isHouse\": true,\r\n    \"location\":\"{{$randomStreetAddress}}\",\r\n    \"address\":\"{{$randomStreetAddress}}\",\r\n    \"city\":\"{{$randomCity}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipCode\":\"{{zipCode}}\",\r\n    \"image\":\"{{$randomAvatarImage}}\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isHouse\": true,\r\n    \"location\":\"{{$randomStreetAddress}}\",\r\n    \"address\":\"{{$randomStreetAddress}}\",\r\n    \"city\":\"{{$randomCity}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipCode\":\"{{zipCode}}\",\r\n    \"image\":\"{{$randomAvatarImage}}\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chef",
+			"item": [
+				{
+					"name": "Get All Chefs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/allchefs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"allchefs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":\"{{$randomFoodImage}}\",\r\n    \"foodType\":\"{{randomFoodImage}}\",\r\n    \"dietaryType\":\"{{$randomFoodImage}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6420be86e2acaa39b812a694\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":\"{{$randomFoodImage}}\",\r\n    \"foodType\":\"{{randomFoodImage}}\",\r\n    \"dietaryType\":\"{{$randomFoodImage}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6420be86e2acaa39b812a694\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "customerId",
+			"value": ""
+		},
+		{
+			"key": "vendorId",
+			"value": ""
+		},
+		{
+			"key": "type",
+			"value": "[\"LOCAL\", \"INTERNATIONAL\"]",
+			"type": "default"
+		},
+		{
+			"key": "productId",
+			"value": ""
+		},
+		{
+			"key": "invoiceId",
+			"value": ""
+		},
+		{
+			"key": "billId",
+			"value": ""
+		},
+		{
+			"key": "locationId",
+			"value": ""
+		},
+		{
+			"key": "numberId",
+			"value": ""
+		},
+		{
+			"key": "vNumberId",
+			"value": ""
+		},
+		{
+			"key": "vLocationId",
+			"value": ""
+		},
+		{
+			"key": "vPhoneId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "vendorProductId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "customerProductId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "invoiceItemId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "billItemId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "baseUrl",
+			"value": "localhost:8081",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "randomReceipt",
+			"value": ""
+		}
+	]
+}
