@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "2f76a271-fcf1-4a0e-8a51-d964218897a2",
+		"_postman_id": "8a747099-d99d-4c9f-b379-6d88cccd004d",
 		"name": "Obaki",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22331090"
 	},
 	"item": [
 		{
@@ -15,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"waheed.2ndyearelegant@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"sheheryarbangash71@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,9 +24,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/user",
+							"raw": "{{liveurl}}/user",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"user"
@@ -55,7 +56,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"waheed.2ndyearelegant@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"sheheryarbangash71@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -63,9 +64,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/login",
+							"raw": "{{liveurl}}/login",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"login"
@@ -89,9 +90,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/verifyOtp",
+							"raw": "{{liveurl}}/verifyOtp",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"verifyOtp"
@@ -127,9 +128,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/restaurantHouse",
+							"raw": "{{liveurl}}/restaurantHouse",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"restaurantHouse"
@@ -169,9 +170,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/restaurantHouse",
+							"raw": "{{liveurl}}/restaurantHouse",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"restaurantHouse"
@@ -211,9 +212,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/restaurantHouse",
+							"raw": "{{liveurl}}/restaurantHouse",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"restaurantHouse"
@@ -244,9 +245,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/restaurantHouse",
+							"raw": "{{liveurl}}/restaurantHouse",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"restaurantHouse"
@@ -282,9 +283,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/allchefs",
+							"raw": "{{liveurl}}/allchefs",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"allchefs"
@@ -315,9 +316,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/chef",
+							"raw": "{{liveurl}}/chef",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"chef"
@@ -357,9 +358,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/chef",
+							"raw": "{{liveurl}}/chef",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"chef"
@@ -399,9 +400,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/chef",
+							"raw": "{{liveurl}}/chef",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"chef"
@@ -432,12 +433,388 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/chef",
+							"raw": "{{liveurl}}/chef",
 							"host": [
-								"{{baseUrl}}"
+								"{{liveurl}}"
 							],
 							"path": [
 								"chef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entertainer",
+			"item": [
+				{
+					"name": "Get All Entertainers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{liveurl}}/allentertainers",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"allentertainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Entertainer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{liveurl}}/entertainer",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"entertainer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Entertainer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"genre\":\"{{$randomWord}}\",\r\n    \"entertainerType\":\"{{$randomWords}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{liveurl}}/entertainer",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"entertainer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Entertainer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"4\",\r\n    \"genre\":\"{{$randomWord}}\",\r\n    \"entertainerType\":\"{{$randomWords}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{liveurl}}/entertainer",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"entertainer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Entertainer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{liveurl}}/entertainer",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"entertainer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "Get All Properties",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{liveurl}}/allproperties",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"allproperties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{liveurl}}/property",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipcode\": \"3\",\r\n    \"typeOfStay\":\"condo\",\r\n    \"typeOfRoom\":\"king\",\r\n    \"amenities\":[\"Wifi\",\"hotwater\"],\r\n    \"totalPerson\":\"4\",\r\n    \"PricePerNight\":\"100$\",\r\n    \"bookingDate\":\"10/12/2023\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"propertyImages\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"]\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{liveurl}}/property",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipcode\": \"3424234\",\r\n    \"typeOfStay\":\"resort\",\r\n    \"typeOfRoom\":\"queen\",\r\n    \"amenities\":[\"Kitchen\", \"pool\" ,\"hotwater\"],\r\n    \"totalPerson\":\"2\",\r\n    \"PricePerNight\":\"200$\",\r\n    \"bookingDate\":\"11/11/2023\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"propertyImages\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"]\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{liveurl}}/property",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{liveurl}}/property",
+							"host": [
+								"{{liveurl}}"
+							],
+							"path": [
+								"property"
 							]
 						}
 					},
@@ -534,7 +911,7 @@
 			"type": "default"
 		},
 		{
-			"key": "baseUrl",
+			"key": "baseUrll",
 			"value": "localhost:8081",
 			"type": "default"
 		},
@@ -545,6 +922,11 @@
 		{
 			"key": "randomReceipt",
 			"value": ""
+		},
+		{
+			"key": "liveurl",
+			"value": "http://13.48.6.148:8081",
+			"type": "string"
 		}
 	]
 }
