@@ -24,15 +24,15 @@ const chefSchema = new mongoose.Schema({
           required:true
         },
         foodCountry:{
-          type: String,
+          type: [String],
           required:true
         },
         foodType:{
-        type: String,
+        type: [String],
         required:true
         },
         dietaryType:{
-          type: String,
+          type: [String],
           required:true
         },
         description:{

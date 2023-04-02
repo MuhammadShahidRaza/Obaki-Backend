@@ -6,8 +6,8 @@ const CreateEntertainer= z
     country: z.string(),
     state: z.string(),
     experience: z.string().regex(new RegExp('[0-9]'),{message:"Enter Valid Number of Experience"}),
-    genre: z.string(),
-    entertainerType: z.string(),
+    genre: z.string().array(),
+    entertainerType: z.string().array(),
     description: z.string(),
     uploadImage: z.string().optional(),
    
