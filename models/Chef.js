@@ -39,6 +39,11 @@ const chefSchema = new mongoose.Schema({
           type: String,
           required:true
         },
+
+        profilePicture:{
+          type: String,
+          default: undefined
+        },
         dishImage:{
           type: [String],
           maxlength: 5,
