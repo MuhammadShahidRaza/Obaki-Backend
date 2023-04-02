@@ -3,6 +3,8 @@ var router = express.Router();
 var UserController = require('../controllers/userController/userController');
 var RestaurantHouseController = require('../controllers/restaurantHouseController/restaurantHouseController');
 var ChefController = require('../controllers/chefController/chefController');
+var EntertainerController = require('../controllers/entertainerController/entertainerController');
+var PropertyController = require('../controllers/propertyController/propertyController');
 
 
 const auth = require("../middleware/auth");
@@ -27,6 +29,20 @@ router.get('/chef',auth, ChefController.getChef);
 router.post('/chef',auth, ChefController.CreateChef);
 router.put('/chef',auth, ChefController.UpdateChef);
 router.delete('/chef',auth, ChefController.DeleteChef);
+
+// ENTERTAINER ROUTES
+router.get('/allentertainers',auth, EntertainerController.getAllEntertainers);
+router.get('/entertainer',auth, EntertainerController.getEntertainer);
+router.post('/entertainer',auth, EntertainerController.CreateEntertainer);
+router.put('/entertainer',auth, EntertainerController.UpdateEntertainer);
+router.delete('/entertainer',auth, EntertainerController.DeleteEntrtainer);
+
+// PROPERTY ROUTES
+router.get('/allproperties',auth, PropertyController.getAllProperties);
+router.get('/property',auth, PropertyController.getProperty);
+router.post('/property',auth, PropertyController.CreateProperty);
+router.put('/property',auth, PropertyController.UpdateProperty);
+router.delete('/property',auth, PropertyController.DeleteProperty);
 
 
 
