@@ -25,12 +25,12 @@ const EntertainerSchema = new mongoose.Schema({
       },
 
       genre:{
-        type: String,
+        type: [String],
         required:true
       },
 
       entertainerType:{
-        type: String,
+        type: [String],
         required:true
         },
 

@@ -25,16 +25,21 @@ const PropertySchema = new mongoose.Schema({
       },
 
       typeOfStay:{
-        type: String,
+        type: [String],
         required:true
       },
 
       typeOfRoom:{
-        type: String,
+        type: [String],
         required:true
       },
 
       amenities:{
+        type: [String],
+        required:true
+      },
+
+      sceneryType:{
         type: [String],
         required:true
       },
