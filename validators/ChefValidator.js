@@ -10,6 +10,7 @@ const CreateChef = z
     foodType: z.string().array(),
     dietaryType: z.string().array(),
     description: z.string(),
+    profilePicture: z.string().optional(),
     dishImage: z.string().array().max(5).optional(),
     certificate: z.string().optional(),
     restaurantHouse:z.string().optional(),
