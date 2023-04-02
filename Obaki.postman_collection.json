@@ -350,7 +350,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":\"[{{$randomFoodImage}}]\",\r\n    \"foodType\":\"[{{randomFoodImage}}]\",\r\n    \"dietaryType\":\"[{{$randomFoodImage}}]\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6428dea156e3047f6b39e867\"\r\n}",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":[\"{{$randomFoodImage}}\"],\r\n    \"foodType\":[\"{{randomFoodImage}}\"],\r\n    \"dietaryType\":[\"{{$randomFoodImage}}\"],\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6428dea156e3047f6b39e867\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -538,7 +538,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"11\",\r\n    \"genre\":\"[{{$randomWord}}]\",\r\n    \"entertainerType\":\"[{{$randomWords}}]\",\r\n    \"description\":\"hello1111\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"11\",\r\n    \"genre\":[\"{{$randomWord}}\",\"hello123\"],\r\n    \"entertainerType\":[\"{{$randomWords}}\",\"asdasd\"],\r\n    \"description\":\"hello1111\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
