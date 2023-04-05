@@ -162,7 +162,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"isHouse\": true,\r\n    \"location\":\"{{$randomStreetAddress}}\",\r\n    \"address\":\"{{$randomStreetAddress}}\",\r\n    \"city\":\"{{$randomCity}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipCode\":\"{{zipCode}}\",\r\n    \"image\":\"{{$randomAvatarImage}}\"\r\n    \r\n}",
+							"raw": "{\r\n    \"isHouse\": true,\r\n    \"location\":\"{{$randomStreetAddress}}\",\r\n    \"address\":\"{{$randomStreetAddress}}\",\r\n    \"city\":\"{{$randomCity}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipCode\":\"{{zipCode}}\",\r\n    \"image\":\"\"\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -350,7 +350,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":[\"{{$randomFoodImage}}\"],\r\n    \"foodType\":[\"{{randomFoodImage}}\"],\r\n    \"dietaryType\":[\"{{$randomFoodImage}}\"],\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6428dea156e3047f6b39e867\"\r\n}",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":[\"{{$randomFoodImage}}\"],\r\n    \"foodType\":[\"{{randomFoodImage}}\"],\r\n    \"dietaryType\":[\"{{$randomFoodImage}}\"],\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"profilePicture\": \"https://www.google.com/search?q=profile+picture&oq=profile+picture&aqs=chrome..69i57j46i433i512j0i131i433i512l2j0i512l2j0i433i512j0i512l2.5723j0j7&sourceid=chrome&ie=UTF-8#imgrc=nfkyptoYx2OzJM\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -392,7 +392,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":\"{{$randomFoodImage}}\",\r\n    \"foodType\":\"{{randomFoodImage}}\",\r\n    \"dietaryType\":\"{{$randomFoodImage}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6420be86e2acaa39b812a694\"\r\n}",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":[\"{{$randomFoodImage}}\"],\r\n    \"foodType\":[\"{{randomFoodImage}}\"],\r\n    \"dietaryType\":[\"{{$randomFoodImage}}\"],\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"profilePicture\": \"https://www.google.com/search?q=profile+picture&oq=profile+picture&aqs=chrome..69i57j46i433i512j0i131i433i512l2j0i512l2j0i433i512j0i512l2.5723j0j7&sourceid=chrome&ie=UTF-8#imgrc=nfkyptoYx2OzJM\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6424b34dda3836021c24d453\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -484,6 +484,9 @@
 				},
 				{
 					"name": "Get Entertainer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -503,6 +506,15 @@
 								"type": "default"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"id\": \"6428f2e3ec6bbe8acad191a4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{liveurl}}/entertainer",
 							"host": [
@@ -538,7 +550,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"11\",\r\n    \"genre\":[\"{{$randomWord}}\",\"hello123\"],\r\n    \"entertainerType\":[\"{{$randomWords}}\",\"asdasd\"],\r\n    \"description\":\"hello1111\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
+							"raw": "{\r\n    \"name\": \"hasdasd\",\r\n    \"country\":\"dsf\",\r\n    \"state\":\"dsfsdf\",\r\n    \"experience\": \"11\",\r\n    \"genre\":[\"sdfsdfs\",\"hello123\"],\r\n    \"entertainerType\":[\"sdfsdf\",\"asdasd\"],\r\n    \"description\":\"hello1111\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -580,7 +592,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"4\",\r\n    \"genre\":\"{{$randomWord}}\",\r\n    \"entertainerType\":\"{{$randomWords}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"10\",\r\n    \"genre\":\"{{$randomWord}}\",\r\n    \"entertainerType\":\"{{$randomWords}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"uploadImage\": \"{{$randomImageDataUri}}\"\r\n    \r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -726,7 +738,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipcode\": \"3\",\r\n    \"typeOfStay\":[\"condo\",\"big\"],\r\n    \"typeOfRoom\":[\"king\",\"queen\"],\r\n    \"amenities\":[\"Wifi\",\"hotwater\"],\r\n    \"sceneryType\" : [\"aabbcc\",\"sdasda\"],\r\n    \"totalPerson\":\"4\",\r\n    \"PricePerNight\":\"100$\",\r\n    \"bookingDate\":\"10/12/2023\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"propertyImages\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"]\r\n    \r\n}",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"address\": \"\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipcode\": \"3\",\r\n    \"typeOfStay\":[\"condo\",\"big\"],\r\n    \"typeOfRoom\":[\"king\",\"queen\"],\r\n    \"amenities\":[\"Wifi\",\"hotwater\"],\r\n    \"sceneryType\" : [\"aabbcc\",\"sdasda\"],\r\n    \"totalPerson\":\"4\",\r\n    \"PricePerNight\":\"100$\",\r\n    \"bookingDate\":\"10/12/2023\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"propertyImages\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"]\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -911,7 +923,7 @@
 			"type": "default"
 		},
 		{
-			"key": "baseUrll",
+			"key": "baeurl",
 			"value": "localhost:8081",
 			"type": "default"
 		},

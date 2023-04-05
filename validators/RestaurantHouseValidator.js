@@ -2,7 +2,7 @@ const z = require('zod');
 
 const CreateRestaurantHouse = z
   .object({
-    isHouse:z.boolean(),
+    isHouse:z.boolean().optional(),
     location: z.string(),
     address: z.string(),
     city: z.string(),
