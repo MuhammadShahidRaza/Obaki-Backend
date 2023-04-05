@@ -3,6 +3,7 @@ const z = require('zod');
 const CreateProperty = z
   .object({
     name: z.string(),
+    address: z.string().optional(),
     country: z.string(),
     state: z.string(),
     zipcode: z.string(),

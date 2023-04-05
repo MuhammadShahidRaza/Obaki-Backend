@@ -63,116 +63,216 @@ async function getChef(req, res) {
  exports.getChef = getChef;
 
 
+// async function CreateChef(req, res) {
+//  try {
+//     const {user_id} = req.user;
+
+//     const {success , error} = checkIfCreateChefIsValid(req.body);
+
+//     if(!success)
+//     {
+//     return res.status(400).send({
+//         success : false,
+//         message: error.issues,
+//         errorCode: 400,
+//       });
+//     }
+
+//     const {restaurantHouse,experience, ...data }= req.body;
+
+//     const isValidExperience = isNumber(experience);
+
+//     if(!isValidExperience){
+//       return res.status(400).send({
+//         success : false,
+//         message: "Enter Valid Experience",
+//         errorCode: 400,
+//       });
+//     }
+
+//     const isChef = await Chef.findOne({
+//       user_id
+//     });
+
+//     if(isChef)
+//     {
+//       return res.status(400).send({
+//         success : false,
+//         message: "Data Already exist.",
+//         errorCode: 400,
+//       });
+//     }
+
+
+//     if(restaurantHouse){
+
+//       const isValidrestaurantHouseId = mongoose.Types.ObjectId.isValid(restaurantHouse);
+
+//       if(!isValidrestaurantHouseId){
+//        return res.status(400).send({
+//          success : false,
+//          message: "Invalid restaurant or House Id.",
+//          errorCode: 400,
+//        });
+//       }
+
+
+//       const isRestaurantHouse = await RestaurantHouse.findOne({
+//         _id : restaurantHouse
+//       });
+
+//       if(!isRestaurantHouse)
+//       {
+//         return res.status(400).send({
+//           success : false,
+//           message: "Restaurant or House does not exist for provided Id.",
+//           errorCode: 400,
+//         });
+//       }
+
+
+//     const restaurantHouseCreated= new Chef({
+//       ...data,
+//       experience: parseInt(experience),
+//       restaurantHouse,
+//       user_id
+//     });
+
+//     await restaurantHouseCreated.save();
+
+//     return res.status(200).send({
+//       success : true,
+//       message: "Data Added Successfully",
+//     });
+
+//     }
+
+
+//     const restaurantHouseCreated= new Chef({
+//       ...data,
+//       experience:parseInt(experience),
+//       user_id
+//     });
+
+//     await restaurantHouseCreated.save();
+
+//     return res.status(200).send({
+//       success : true,
+//       message: "Data Added Successfully",
+//     });
+
+//  }
+//  catch (error) {
+//     return res.status(400).send({
+//       success : false,
+//       message: error.message,
+//       errorCode: 400,
+//     });
+//  }
+
+// };
+// exports.CreateChef = CreateChef;
+
 async function CreateChef(req, res) {
- try {
-    const {user_id} = req.user;
-
-    const {success , error} = checkIfCreateChefIsValid(req.body);
-
-    if(!success)
-    {
-    return res.status(400).send({
-        success : false,
-        message: error.issues,
-        errorCode: 400,
-      });
-    }
-
-    const {restaurantHouse,experience, ...data }= req.body;
-
-    const isValidExperience = isNumber(experience);
-
-    if(!isValidExperience){
-      return res.status(400).send({
-        success : false,
-        message: "Enter Valid Experience",
-        errorCode: 400,
-      });
-    }
-
-    const isChef = await Chef.findOne({
-      user_id
-    });
-
-    if(isChef)
-    {
-      return res.status(400).send({
-        success : false,
-        message: "Data Already exist.",
-        errorCode: 400,
-      });
-    }
-
-
-    if(restaurantHouse){
-
-      const isValidrestaurantHouseId = mongoose.Types.ObjectId.isValid(restaurantHouse);
-
-      if(!isValidrestaurantHouseId){
-       return res.status(400).send({
+  try {
+     const {user_id} = req.user;
+ 
+     const {success , error} = checkIfCreateChefIsValid(req.body);
+ 
+     if(!success)
+     {
+     return res.status(400).send({
          success : false,
-         message: "Invalid restaurant or House Id.",
+         message: error.issues,
          errorCode: 400,
        });
-      }
-
-
-      const isRestaurantHouse = await RestaurantHouse.findOne({
-        _id : restaurantHouse
-      });
-
-      if(!isRestaurantHouse)
-      {
+     }
+ 
+     const {restaurantHouse,experience, ...data }= req.body;
+ 
+     const isValidExperience = isNumber(experience);
+ 
+     if(!isValidExperience){
+       return res.status(400).send({
+         success : false,
+         message: "Enter Valid Experience",
+         errorCode: 400,
+       });
+     }
+ 
+     const isChef = await Chef.findOne({
+       user_id
+     });
+ 
+     if(isChef)
+     {
+       return res.status(400).send({
+         success : false,
+         message: "Data Already exist.",
+         errorCode: 400,
+       });
+     }
+ 
+     let chef;
+ 
+     if(restaurantHouse && restaurantHouse.trim() !== ''){
+ 
+       const isValidrestaurantHouseId = mongoose.Types.ObjectId.isValid(restaurantHouse);
+ 
+       if(!isValidrestaurantHouseId){
         return res.status(400).send({
           success : false,
-          message: "Restaurant or House does not exist for provided Id.",
+          message: "Invalid restaurant or House Id.",
           errorCode: 400,
         });
-      }
-
-
-    const restaurantHouseCreated= new Chef({
-      ...data,
-      experience: parseInt(experience),
-      restaurantHouse,
-      user_id
-    });
-
-    await restaurantHouseCreated.save();
-
-    return res.status(200).send({
-      success : true,
-      message: "Data Added Successfully",
-    });
-
-    }
-
-
-    const restaurantHouseCreated= new Chef({
-      ...data,
-      experience:parseInt(experience),
-      user_id
-    });
-
-    await restaurantHouseCreated.save();
-
-    return res.status(200).send({
-      success : true,
-      message: "Data Added Successfully",
-    });
-
- }
- catch (error) {
-    return res.status(400).send({
-      success : false,
-      message: error.message,
-      errorCode: 400,
-    });
- }
-
-};
-exports.CreateChef = CreateChef;
-
+       }
+ 
+       const isRestaurantHouse = await RestaurantHouse.findOne({
+         _id : restaurantHouse
+       });
+ 
+       if(!isRestaurantHouse)
+       {
+         return res.status(400).send({
+           success : false,
+           message: "Restaurant or House does not exist for provided Id.",
+           errorCode: 400,
+         });
+       }
+ 
+       chef = new Chef({
+         ...data,
+         experience: parseInt(experience),
+         restaurantHouse,
+         user_id
+       });
+     } else {
+       chef = new Chef({
+         ...data,
+         experience: parseInt(experience),
+         user_id
+       });
+     }
+ 
+     await chef.save();
+ 
+     return res.status(200).send({
+       success : true,
+       message: "Data Added Successfully",
+     });
+ 
+  }
+  catch (error) {
+     return res.status(400).send({
+       success : false,
+       message: error.message,
+       errorCode: 400,
+     });
+  }
+ 
+ };
+ 
+ exports.CreateChef = CreateChef;
 
 async function UpdateChef(req, res) {
   try {

@@ -9,6 +9,11 @@ const PropertySchema = new mongoose.Schema({
         required:true
       },
 
+      address:{
+        type: String,
+        
+      },
+
       country:{
         type: String,
         required:true

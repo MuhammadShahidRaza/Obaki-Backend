@@ -4,7 +4,7 @@ const Schema  = mongoose.Schema;
 const restaurantOrHouseSchema = new mongoose.Schema({
         isHouse:{
           type: Boolean,
-          required:true
+          // required:true
        },
         location:{
           type: String,
@@ -28,7 +28,7 @@ const restaurantOrHouseSchema = new mongoose.Schema({
         },
         image:{
           type: String,
-          required:true
+          // required:true
         },
         user_id:{
           type: Schema.Types.ObjectId,
